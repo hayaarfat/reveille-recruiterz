@@ -21,8 +21,7 @@
         <div v-if="posts.length">
           <div v-for="post in posts" :key="post.id" class="post">
             <h5>{{ post.userName }}</h5>
-            <span>{{ post.createdOn | formatDate }}</span>
-            <p>{{ post.content | trimLength }}</p>
+           
             <ul>
               <li><a @click="toggleCommentModal(post)">comments {{ post.comments }}</a></li>
               <li><a @click="likePost(post.id, post.likes)">likes {{ post.likes }}</a></li>
@@ -43,7 +42,7 @@
           <a @click="closePostModal()" class="close">close</a>
           <div class="post">
             <h5>{{ fullPost.userName }}</h5>
-            <span>{{ fullPost.createdOn | formatDate }}</span>
+            
             <p>{{ fullPost.content }}</p>
             <ul>
               <li><a>comments {{ fullPost.comments }}</a></li>
@@ -53,7 +52,7 @@
           <div v-show="postComments.length" class="comments">
             <div v-for="comment in postComments" :key="comment.id" class="comment">
               <p>{{ comment.userName }}</p>
-              <span>{{ comment.createdOn | formatDate }}</span>
+             
               <p>{{ comment.content }}</p>
             </div>
           </div>
