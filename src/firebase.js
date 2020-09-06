@@ -34,3 +34,9 @@ export {
   emailCollection,
   jobCollection
 }
+// we will need access to the store so we need to change around how its exported
+const store = new Vuex.Store({
+  // apps state
+})
+
+export default store
